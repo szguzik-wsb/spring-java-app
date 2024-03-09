@@ -15,7 +15,7 @@ public class WebClientController {
         this.webClientService = webClientService;
     }
 
-    @GetMapping("/api/data/")
+    @GetMapping("/api/data")
     public Mono<String> getItems() {
         return webClientService.fetchData();
     }
@@ -23,5 +23,14 @@ public class WebClientController {
     @GetMapping("/api/data/{id}")
     public Mono<String> getItem(@PathVariable String id) {
         return webClientService.fetchItem(id);
+    }
+    @GetMapping("/api/articles")
+    public Mono<String> getItemsArticles() {
+        return webClientService.fetchDataArticles();
+    }
+
+    @GetMapping("/api/articles/{id}")
+    public Mono<String> getItemArticle(@PathVariable String id) {
+        return webClientService.fetchItemArticle(id);
     }
 }
