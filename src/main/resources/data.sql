@@ -1,0 +1,1 @@
+insert into Article (id, title, content) values (1, 'Artykul 1', 'Content 1');
