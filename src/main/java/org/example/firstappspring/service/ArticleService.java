@@ -11,14 +11,32 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ArticleService {
 
+
     private final ArticleRepository articleRepository;
 
     public List<Article> getArticle() {
         return articleRepository.findAll();
     }
 
+
     public Article getSingleArticle(long id) {
         return articleRepository.findById(id)
                 .orElse(null);
+    }
+
+    public void addArticle(Article article) {
+        articleRepository.save(article);
+    }
+
+    public void updateArticle(Article article) {
+        articleRepository.save(article);
+    }
+
+    public void deleteArticle(Article article) {
+        articleRepository.delete(article);
+    }
+
+    public void deleteArticleById(long id) {
+        articleRepository.deleteById(id);
     }
 }
